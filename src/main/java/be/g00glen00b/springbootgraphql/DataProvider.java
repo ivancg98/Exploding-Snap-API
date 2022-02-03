@@ -13,6 +13,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
+import static be.g00glen00b.springbootgraphql.alumne.Alumne.House.GRYFFINDOR;
+import static be.g00glen00b.springbootgraphql.alumne.Alumne.House.SLYTHERIN;
+
 @Component
 @AllArgsConstructor
 public class DataProvider implements CommandLineRunner {
@@ -32,7 +35,7 @@ public class DataProvider implements CommandLineRunner {
         commentRepository.save(new Comment(null, "Do you like this article?", article1.getId(), author.getId()));
         commentRepository.save(new Comment(null, "This is a great article", article1.getId(), admin.getId()));
         commentRepository.save(new Comment(null, "This is a comment", article2.getId(), admin.getId()));
-        Alumne alumne1 = alumneRepository.save(new Alumne(null, "Harry"));
-        Alumne alumne2 = alumneRepository.save(new Alumne(null, "Ron"));
+        Alumne alumne1 = alumneRepository.save(new Alumne(null, "Harry", GRYFFINDOR));
+        Alumne alumne2 = alumneRepository.save(new Alumne(null, "Ron", SLYTHERIN));
     }
 }
