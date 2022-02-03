@@ -1,6 +1,9 @@
 package be.g00glen00b.springbootgraphql;
 
 import java.util.List;
+
+import be.g00glen00b.springbootgraphql.alumne.Alumne;
+import be.g00glen00b.springbootgraphql.alumne.AlumneRepository;
 import be.g00glen00b.springbootgraphql.article.Article;
 import be.g00glen00b.springbootgraphql.article.ArticleRepository;
 import be.g00glen00b.springbootgraphql.comment.Comment;
@@ -17,6 +20,7 @@ public class QueryResolver implements GraphQLQueryResolver {
     private ArticleRepository articleRepository;
     private CommentRepository commentRepository;
     private ProfileRepository profileRepository;
+    private AlumneRepository alumneRepository;
 
     public List<Article> getArticles() {
         return articleRepository.findAll();
@@ -32,5 +36,9 @@ public class QueryResolver implements GraphQLQueryResolver {
 
     public Article getArticle(Long id) {
         return articleRepository.findOne(id);
+    }
+
+    public List<Alumne> getLlistaAlumnes(){
+        return alumneRepository.findAll();
     }
 }

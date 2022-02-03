@@ -1,5 +1,7 @@
 package be.g00glen00b.springbootgraphql;
 
+import be.g00glen00b.springbootgraphql.alumne.Alumne;
+import be.g00glen00b.springbootgraphql.alumne.AlumneRepository;
 import be.g00glen00b.springbootgraphql.article.Article;
 import be.g00glen00b.springbootgraphql.article.ArticleRepository;
 import be.g00glen00b.springbootgraphql.comment.Comment;
@@ -17,6 +19,7 @@ public class DataProvider implements CommandLineRunner {
     private CommentRepository commentRepository;
     private ArticleRepository articleRepository;
     private ProfileRepository profileRepository;
+    private AlumneRepository alumneRepository;
 
 
     @Override
@@ -29,5 +32,7 @@ public class DataProvider implements CommandLineRunner {
         commentRepository.save(new Comment(null, "Do you like this article?", article1.getId(), author.getId()));
         commentRepository.save(new Comment(null, "This is a great article", article1.getId(), admin.getId()));
         commentRepository.save(new Comment(null, "This is a comment", article2.getId(), admin.getId()));
+        Alumne alumne1 = alumneRepository.save(new Alumne(null, "Harry"));
+        Alumne alumne2 = alumneRepository.save(new Alumne(null, "Ron"));
     }
 }
