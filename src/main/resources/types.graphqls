@@ -5,6 +5,8 @@ type Query {
     article(id: Int!): Article
     llistaAlumnes: [Alumne]
     alumne(id: Int!): Alumne
+    llistaPartides: [Partida]
+    partida(id: Int!): Partida
 }
 
 type Mutation {
@@ -48,6 +50,12 @@ type Alumne {
     idAlumne: Int!
     nom: String
     casa: House
+}
+
+type Partida {
+    id: Int!
+    puntuacio: Int
+    guanyador: Boolean!
 }
 
 input CreateArticleInput {

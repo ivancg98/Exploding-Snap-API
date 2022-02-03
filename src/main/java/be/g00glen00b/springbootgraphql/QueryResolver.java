@@ -8,6 +8,8 @@ import be.g00glen00b.springbootgraphql.article.Article;
 import be.g00glen00b.springbootgraphql.article.ArticleRepository;
 import be.g00glen00b.springbootgraphql.comment.Comment;
 import be.g00glen00b.springbootgraphql.comment.CommentRepository;
+import be.g00glen00b.springbootgraphql.partida.Partida;
+import be.g00glen00b.springbootgraphql.partida.PartidaRepository;
 import be.g00glen00b.springbootgraphql.profile.Profile;
 import be.g00glen00b.springbootgraphql.profile.ProfileRepository;
 import com.coxautodev.graphql.tools.GraphQLQueryResolver;
@@ -21,6 +23,7 @@ public class QueryResolver implements GraphQLQueryResolver {
     private CommentRepository commentRepository;
     private ProfileRepository profileRepository;
     private AlumneRepository alumneRepository;
+    private PartidaRepository partidaRepository;
 
     public List<Article> getArticles() {
         return articleRepository.findAll();
@@ -45,5 +48,13 @@ public class QueryResolver implements GraphQLQueryResolver {
 
     public Alumne getAlumne(Long id) {
         return alumneRepository.findOne(id);
+    }
+
+    public List<Partida> getLlistaPartides() {
+        return partidaRepository.findAll();
+    }
+
+    public Partida getPartida(Long id) {
+        return partidaRepository.findOne(id);
     }
 }

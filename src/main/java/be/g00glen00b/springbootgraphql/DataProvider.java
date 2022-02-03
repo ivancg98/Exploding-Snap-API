@@ -6,6 +6,8 @@ import be.g00glen00b.springbootgraphql.article.Article;
 import be.g00glen00b.springbootgraphql.article.ArticleRepository;
 import be.g00glen00b.springbootgraphql.comment.Comment;
 import be.g00glen00b.springbootgraphql.comment.CommentRepository;
+import be.g00glen00b.springbootgraphql.partida.Partida;
+import be.g00glen00b.springbootgraphql.partida.PartidaRepository;
 import be.g00glen00b.springbootgraphql.profile.Profile;
 import be.g00glen00b.springbootgraphql.profile.ProfileRepository;
 import lombok.AllArgsConstructor;
@@ -23,6 +25,7 @@ public class DataProvider implements CommandLineRunner {
     private ArticleRepository articleRepository;
     private ProfileRepository profileRepository;
     private AlumneRepository alumneRepository;
+    private PartidaRepository partidaRepository;
 
 
     @Override
@@ -37,5 +40,9 @@ public class DataProvider implements CommandLineRunner {
         commentRepository.save(new Comment(null, "This is a comment", article2.getId(), admin.getId()));
         Alumne alumne1 = alumneRepository.save(new Alumne(null, "Harry", GRYFFINDOR));
         Alumne alumne2 = alumneRepository.save(new Alumne(null, "Ron", SLYTHERIN));
+        partidaRepository.save(new Partida(null, 13, true));
+        partidaRepository.save(new Partida(null, 33, false));
+        partidaRepository.save(new Partida(null, 14, true));
+        partidaRepository.save(new Partida(null, 23, true));
     }
 }
