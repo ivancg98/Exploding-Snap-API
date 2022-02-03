@@ -38,7 +38,12 @@ public class QueryResolver implements GraphQLQueryResolver {
         return articleRepository.findOne(id);
     }
 
-    public List<Alumne> getLlistaAlumnes(){
+    /*Les meves querys*/
+    public List<Alumne> getLlistaAlumnes() {
         return alumneRepository.findAll();
+    }
+
+    public Alumne getAlumne(Long id) {
+        return alumneRepository.findOne(id);
     }
 }

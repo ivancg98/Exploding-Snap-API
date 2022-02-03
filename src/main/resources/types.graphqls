@@ -4,6 +4,7 @@ type Query {
     comments: [Comment]
     article(id: Int!): Article
     llistaAlumnes: [Alumne]
+    alumne(id: Int!): Alumne
 }
 
 type Mutation {
