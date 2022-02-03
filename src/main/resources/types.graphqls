@@ -50,6 +50,7 @@ type Alumne {
     idAlumne: Int!
     nom: String
     casa: House
+    partidesJugades: [Partida!]!
 }
 
 type Partida {

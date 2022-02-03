@@ -40,9 +40,9 @@ public class DataProvider implements CommandLineRunner {
         commentRepository.save(new Comment(null, "This is a comment", article2.getId(), admin.getId()));
         Alumne alumne1 = alumneRepository.save(new Alumne(null, "Harry", GRYFFINDOR));
         Alumne alumne2 = alumneRepository.save(new Alumne(null, "Ron", SLYTHERIN));
-        partidaRepository.save(new Partida(null, 13, true));
-        partidaRepository.save(new Partida(null, 33, false));
-        partidaRepository.save(new Partida(null, 14, true));
-        partidaRepository.save(new Partida(null, 23, true));
+        partidaRepository.save(new Partida(null, 13, true, alumne1.getIdAlumne()));
+        partidaRepository.save(new Partida(null, 33, false, alumne1.getIdAlumne()));
+        partidaRepository.save(new Partida(null, 14, true, alumne2.getIdAlumne()));
+        partidaRepository.save(new Partida(null, 23, true, alumne2.getIdAlumne()));
     }
 }

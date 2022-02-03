@@ -19,4 +19,5 @@ public class Partida {
     private Long id;
     private Integer puntuacio;
     private Boolean guanyador;
+    private Long idAlumne;
 }
