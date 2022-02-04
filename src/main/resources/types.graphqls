@@ -18,9 +18,12 @@ type Mutation {
     deleteProfile(id: Int!): Int!
     createComment(input: CreateCommentInput!): Comment!
     deleteComment(id: Int!): Int!
+    createAlumne(input: CreateAlumneInput!): Alumne!
     deleteAlumne(idAlumne: Int!): Int!
     deletePartida(idPartida: Int!): Int!
 }
+
+
 enum House {
     GRYFFINDOR
     HUFFLEPUFF
@@ -89,3 +92,7 @@ input CreateCommentInput {
     articleId: Int!
 }
 
+input CreateAlumneInput {
+    nom: String!
+    casa: House!
+}

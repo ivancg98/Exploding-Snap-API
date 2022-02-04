@@ -12,3 +12,5 @@ public class CreateArticleInput {
     private String text;
     private Long authorId;
 }
+
+
