@@ -18,6 +18,8 @@ type Mutation {
     deleteProfile(id: Int!): Int!
     createComment(input: CreateCommentInput!): Comment!
     deleteComment(id: Int!): Int!
+    deleteAlumne(idAlumne: Int!): Int!
+    deletePartida(idPartida: Int!): Int!
 }
 enum House {
     GRYFFINDOR
@@ -54,7 +56,7 @@ type Alumne {
 }
 
 type Partida {
-    id: Int!
+    idPartida: Int!
     puntuacio: Int
     guanyador: Boolean!
 }

@@ -16,7 +16,7 @@ import javax.persistence.Id;
 public class Partida {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long idPartida;
     private Integer puntuacio;
     private Boolean guanyador;
     private Long idAlumne;

@@ -1,5 +1,6 @@
 package be.g00glen00b.springbootgraphql;
 
+import be.g00glen00b.springbootgraphql.alumne.AlumneRepository;
 import be.g00glen00b.springbootgraphql.article.Article;
 import be.g00glen00b.springbootgraphql.article.ArticleNotFoundException;
 import be.g00glen00b.springbootgraphql.article.ArticleRepository;
@@ -8,6 +9,7 @@ import be.g00glen00b.springbootgraphql.article.UpdateArticleInput;
 import be.g00glen00b.springbootgraphql.comment.Comment;
 import be.g00glen00b.springbootgraphql.comment.CommentRepository;
 import be.g00glen00b.springbootgraphql.comment.CreateCommentInput;
+import be.g00glen00b.springbootgraphql.partida.PartidaRepository;
 import be.g00glen00b.springbootgraphql.profile.CreateProfileInput;
 import be.g00glen00b.springbootgraphql.profile.Profile;
 import be.g00glen00b.springbootgraphql.profile.ProfileNotFoundException;
@@ -24,6 +26,8 @@ public class MutationResolver implements GraphQLMutationResolver {
     private ArticleRepository articleRepository;
     private CommentRepository commentRepository;
     private ProfileRepository profileRepository;
+    private AlumneRepository alumneRepository;
+    private PartidaRepository partidaRepository;
 
     @Transactional
     public Article createArticle(CreateArticleInput input) {
@@ -73,4 +77,11 @@ public class MutationResolver implements GraphQLMutationResolver {
     public int deleteComment(Long id) {
         return commentRepository.deleteById(id);
     }
+
+    @Transactional
+    public int deleteAlumne(Long idAlumne){return alumneRepository.deleteByIdAlumne(idAlumne);}
+
+    @Transactional
+    public int deletePartida(Long idPartida){ return partidaRepository.deleteByIdPartida(idPartida);}
+
 }
