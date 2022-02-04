@@ -19,9 +19,12 @@ type Mutation {
     createComment(input: CreateCommentInput!): Comment!
     deleteComment(id: Int!): Int!
     createAlumne(input: CreateAlumneInput!): Alumne!
+    createPartida(input: CreatePartidaInput!): Partida!
     deleteAlumne(idAlumne: Int!): Int!
     deletePartida(idPartida: Int!): Int!
 }
+
+
 
 
 enum House {
@@ -95,4 +98,10 @@ input CreateCommentInput {
 input CreateAlumneInput {
     nom: String!
     casa: House!
+}
+
+input CreatePartidaInput {
+    puntuacio: Int
+    guanyador: Boolean!
+    alumneId: Int!
 }

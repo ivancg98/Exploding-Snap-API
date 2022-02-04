@@ -11,6 +11,7 @@ import be.g00glen00b.springbootgraphql.article.UpdateArticleInput;
 import be.g00glen00b.springbootgraphql.comment.Comment;
 import be.g00glen00b.springbootgraphql.comment.CommentRepository;
 import be.g00glen00b.springbootgraphql.comment.CreateCommentInput;
+import be.g00glen00b.springbootgraphql.partida.CreatePartidaInput;
 import be.g00glen00b.springbootgraphql.partida.Partida;
 import be.g00glen00b.springbootgraphql.partida.PartidaRepository;
 import be.g00glen00b.springbootgraphql.profile.CreateProfileInput;
@@ -86,7 +87,10 @@ public class MutationResolver implements GraphQLMutationResolver {
         return alumneRepository.saveAndFlush(new Alumne(null, input.getNom(), input.getCasa()));
     }
 
-
+    @Transactional
+    public Partida createPartida(CreatePartidaInput input) {
+        return partidaRepository.saveAndFlush(new Partida(null, input.getPuntuacio(), input.isGuanyador(), input.getAlumneId()));
+    }
 
     @Transactional
     public int deleteAlumne(Long idAlumne){return alumneRepository.deleteByIdAlumne(idAlumne);}
